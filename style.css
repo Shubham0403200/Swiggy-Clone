@@ -1,0 +1,968 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+/* ROOT ELEMENTS FOR THE WEBSITE */
+
+:root {
+    --red: #cc0717;
+    --black: #000000;
+    --dblue: #0f0b4d;
+    --light: #666666; 
+    --white: #fff;      
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+    
+/*  STANDARD STYLING FOR THE PAGE */
+
+*{
+    font-family: 'Baloo 2', sans-serif;        
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+    
+html{        
+    background: blanchedalmond;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;        
+    scroll-behavior: smooth;
+}
+    
+section{
+    padding: 2rem 9%; 
+}
+    
+.btn{
+    display: inline-block;
+    padding: 1rem 1.8rem;
+    color: var(--white);
+    background: var(--red);
+    cursor: pointer;
+    font-size: 1.6rem;
+    border-radius: 5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+}
+    
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: var(--white);
+    transition: 0.3s linear;
+    z-index: -1;
+}
+    
+.btn:hover::before {
+    width: 100%;
+    left: 0;
+}
+    
+.btn:hover {
+    color: var(--red);
+}
+
+/* NAVBAR STYLING */
+    
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+    
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--black);
+    font-size: 3rem;
+    font-weight: bolder;
+}
+    
+header .navbar a {
+    font-size: 1.5rem;
+    color: var(--light);
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+}
+    
+header .navbar a.active,
+header .navbar a:hover {
+    color: var(--white);
+    background: var(--red);
+    transition: .3s;
+}
+    
+header .icon i,
+header .icon a {
+    background: #eee;
+    color: var(--black);
+    margin-left: 0.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+    
+header .icon i:hover,
+header .icon a:hover {
+    column-rule: var(--white);
+    color: var(--white);
+    background: var(--red);
+    transition: 1s;
+}
+    
+header .icon #bar {
+    display: none;
+}
+
+/* SEARCH BAR - FAV ICON */
+    
+#search-form {
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+    
+#search-form.active {
+    top: 0;
+}
+    
+#search-form #search-box {
+    width: 50rem;
+    border: none;
+    border-bottom: .1rem solid var(--white);
+    padding: 1rem 0;
+    font-size: 2rem;
+    background: none;
+}
+    
+#search-form #search-box::placeholder {
+    color: var(--white);
+}
+    
+#search-form #search-box::-webkit-search-cancel-button {
+    --webkit-appearance: none;
+}
+    
+#search-form label {
+    color: var(--white);
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#search-form label:hover {
+    color: var(--light);
+}
+    
+#search-form #close {
+    position: absolute;
+    color: var(--white);
+    cursor: pointer;
+    top: 2rem;
+    right: 3rem;
+    font-size: 3rem;
+}
+    
+/* FIRST HOME SECTION - INTRO */
+
+section.home {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 8rem;
+}
+    
+section.home .content {
+    flex: 1 1 45rem;
+}
+    
+section.home .content span {
+    color: var(--red);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+    
+section.home .content p {
+    color: var(--light);
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+    
+section.home .image {
+    flex: 1 1 45rem;
+}
+    
+section.home .image img {
+    width: 100%;
+}
+
+/* SWIGGY SPECIAL */
+    
+section.speciality .heading {
+    text-align: center;
+    color: var(--light);
+    font-size: 4rem;
+    font-weight: 600;
+}
+    
+section.speciality .heading span {
+    color: var(--red);
+}
+    
+section.speciality .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+    
+section.speciality .box-container .box {
+    flex: 1 1 30rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+    
+section.speciality .box-container .box .image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    left: 0;
+}
+    
+section.speciality .box-container .box .content {
+    text-align: center;
+    background: var(--white);
+    padding: 2rem;
+}
+    
+section.speciality .box-container .box .content img {
+    margin-top: 1.5rem 0;
+}
+    
+section.speciality .box-container .box .content h3 {
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+}
+    
+section.speciality .box-container .box .content p {
+    font-size: 1.7rem;
+    color: rgb(36, 33, 33);
+    padding: 1rem 0;
+}
+    
+section.speciality .box-container .box:hover .image {
+    top: 0;
+}
+    
+section.speciality .box-container .box:hover .content {
+    transform: translateX(100%);
+}
+
+/* Popular food section */
+    
+section.popular .heading {
+    text-align: center;
+    color: var(--light);
+    font-size: 4rem;
+    font-weight: 600;
+}
+    
+section.popular .heading span {
+    color: var(--red);
+}
+    
+section.popular .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+    
+section.popular .box-container .box {
+    padding: 2rem;
+    background: var(--white);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    border-radius: 2rem;
+    text-align: center;
+    flex: 1 1 30rem;
+    position: relative;
+}
+    
+.popular .box-container .box img {
+    height: 25rem;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 2rem;
+}
+    
+section.popular .box-container .box h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+        
+section.popular .box-container .box .content p {
+    font-size: 1.6rem;
+    color: var(--light);
+    line-height: 1.5rem;
+    padding: 1rem 0;
+}
+    
+section.popular .box-container .box .price {
+    position: absolute;
+    bottom: 3rem;
+    left: 1rem;
+    background: rgb(212, 129, 4);
+    color: var(--white);
+    font-size: 2rem;
+    padding: 0.2rem .5rem;
+    border-radius: 1rem;
+}
+    
+section.popular .box-container .box .stars i {
+    color: rgb(212, 129, 4);
+    font-size: 1.7rem;
+    padding: 1rem 0.1rem;
+}
+    
+#search-form #search-box {
+    width: 90%;
+    height: 0 1rem;
+}
+
+/* Steps section */
+    
+section.steps {
+    background-color: rgb(212, 129, 4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+    
+section.steps .box {
+    flex: 1 1 25rem;
+    padding: 1rem;
+    text-align: center;
+}
+    
+section.steps .box img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1rem solid #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+    
+section.steps .box h3 {
+    font-size: 2rem;
+    color: var(--dark);
+    padding: 1rem;
+    }
+    
+/* OUR FOOD GALLERY CSS */
+
+section.gallery .heading {
+    text-align: center;
+    color: var(--dark);
+    font-size: 4rem;
+    font-weight: 600;
+}
+    
+section.gallery .heading span {
+    color: var(--red);
+}
+    
+section.gallery .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+    
+section.gallery .box-container .box {
+    height: 27rem;
+    flex: 1 1 30rem;
+    border: .5rem solid rgb(236, 236, 252);
+    box-shadow: 0 0.5 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+    
+section.gallery .box-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+    
+section.gallery .box-container .box .content {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    padding-top: 5rem;
+    text-align: center;
+}
+    
+section.gallery .box-container .box .content h3 {
+    font-size: 3.5rem;
+    color: var(--light);
+}
+    
+section.gallery .box-container .box .content p {
+    font-size: 1.7rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+    
+section.gallery .box-container .box:hover .content {
+    top: 0;
+}
+    
+/* REVIEW SECTION */
+
+section.review .heading {
+    text-align: center;
+    color: var(--light);
+    font-size: 4rem;
+    font-weight: 700;
+}
+    
+section.review .heading span {
+    color: var(--red);
+}
+    
+section.review .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+    
+section.review .box-container .box {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    border: 1rem solid rgb(206, 217, 252);
+    box-shadow: 0 0.5rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    flex: 1 1 30rem;
+    background: var(--white);
+    margin-top: 6rem;
+}
+    
+section.review .box-container .box img {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    border: 1rem solid #fff;
+    margin-top: -8rem;
+    object-fit: cover;
+}
+    
+section.review .box-container .fa-quote-right {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 5rem;
+    color: rgb(250, 175, 64);
+}
+    
+section.review .box-container .box h3 {
+    font-size: 2.5rem;
+    color: var(--light);
+    padding: 0.5rem 0;
+}
+    
+section.review .box-container .box .stars i {
+    font-size: 2rem;
+    color: var(--red);
+    padding: 0.5rem 0;
+}
+    
+section.review .box-container .box p {
+    font-size: 1.5rem;
+    color: var(--light);
+    padding: 0.5rem 0;
+}
+
+/* ORDER FORM */
+
+section.order .heading {
+    text-align: center;
+    color: var(--light);
+    font-size: 4rem;
+    font-weight: 700;
+}
+    
+section.order .heading span {
+    color: var(--red);
+}
+    
+section.order .row {
+    padding: 2rem;
+    box-shadow: 0 0.5rem 1 rgba(0, 0, 0, 0.5);
+    background: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border-radius: 2rem;
+}
+    
+section.order .row .image1 {
+    flex: 1 1 30rem;
+}
+    
+section.order .row .image1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+    
+section.image1 {
+    position: relative;
+    text-align: center;
+    color: var(--white);
+}
+    
+.centered {
+    font-size: 2rem;
+    font-weight: 800;
+    position: absolute;
+    display: none;
+    top: 40%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+}
+    
+section.order .row form {
+    flex: 1 1 50rem;
+    padding: 1rem;
+}
+    
+section.order .row form .inputBox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+    
+section.order .row form .inputBox input,
+section.order .row form textarea {
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 1.7rem;
+    color: var(--light);
+    text-transform: none;
+    border: 0.1rem solid rgba(212, 0, 255, 0.3);
+    border-radius: 2rem;
+    width: 49%;
+}
+    
+section.order .row form textarea {
+    width: 100%;
+    resize: none;
+    height: 15rem;
+}
+    
+section.footer .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+    
+section.footer .container .box h3 {
+    padding: .5rem 0;
+    font-size: 2rem;
+    color: var(--black);
+}
+    
+section.footer .container .box a {
+    display: block;
+    padding: .2rem 0;
+    font-size: 1.5rem;
+    color: var(--black);
+}
+    
+section.footer .container .box a:hover {
+    color: var(--red);
+    text-decoration: none;
+}
+    
+section.footer2 {
+    background: var(--black);
+    text-align: center;
+}
+    
+section.footer2 .share {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+    
+section.footer2 .credit {
+    padding: 2.5rem 1rem;
+    color: var(--white);
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+    
+section.footer2 .credit span {
+    color: var(--red);
+}
+    
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+    
+.loader-container img {
+    width: 35rem;
+}
+    
+.loader-container.fade-out {
+    top: 110%;
+    opacity: 0;
+}
+    
+@media (max-width: 931px) {
+        html {
+            font-size: 52%;
+        }
+        header .navbar a {
+            font-size: 1.8rem;
+            padding: 0.5rem 1rem;
+        }
+        section {
+            padding: 1rem 7%;
+        }
+    }
+    
+    @media (max-width: 710px) {
+        html {
+            font-size: 45%;
+        }
+        header .navbar a {
+            font-size: 1.5rem;
+            padding: 0.3rem .8rem;
+        }
+        header .navbar a {
+            font-size: 1.8rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        html {
+            font-size: 40%;
+        }
+        .home {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 16rem;
+        }
+        header .navbar {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .navbar a {
+            display: block;
+            margin: 1rem;
+            padding: 1.5rem;
+            font-size: 2rem;
+        }
+    }
+    
+    @media (max-width: 425px) {
+        html {
+            font-size: 35%;
+        }
+        .home {
+            padding-top: 7rem;
+        }
+        header .navbar {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            display: block;
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        header .icon #bar {
+            display: inline-block;
+        }
+        header .navbar.active {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+        header .navbar a {
+            margin: .8rem;
+            padding: 1.2rem;
+            font-size: 1.8rem;
+        }
+    }
+
+
+
+
+/* CSS FOR ADDING PHP FILES - LOGIN PAGE */
+
+.sign-in-up button{
+    background-color: var(--red);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.sign-in-up button:hover{
+    background-color: var(--light);
+}
+
+section.form-container{
+    /* background-image: url(img/3.jpg); */
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.popup-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* background: url("IMG/3.jpg") no-repeat; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.popup-container .popup{
+    background-color: var(--white);
+    width: 350px;
+    border-radius: 10px;
+    padding: 20px 25px 30px 25px;
+}
+
+.popup h2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.popup h2 button{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 550;
+    color: var(--light);
+}
+
+.popup input{
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #325253;
+    border-radius: 0;
+    padding: 10px 0;
+    font-weight: 550;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.popup-container .register button.register-btn,
+.login-btn{
+    font-weight: 550;
+    font-size: 15px;
+    color: white;
+    background-color: #0f0b4d;
+    padding: 4px 10px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
+
+.popup-container .register{
+    background-color: #edeef7;
+}
+
+.popup-container .register h2{
+    color: #fa9579;
+}
+
+.popup-container .register input{
+    border-bottom-color: #fa9579;
+}
+
+.popup-container .register button.register-btn{
+    background-color:  #fa9579;
+
+}
+
+div.user {
+    color: var(--red);
+    background: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+div.user a{
+    color: var(--dblue);
+}
+
+/* ADD TO CART PAGE */
+
+.products-container{
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+.products-container i{
+    font-size: 25px;
+    color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.product-header{
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 4px solid lightgrey;
+    margin: 0 auto;
+}
+
+.product-title{
+    width: 45%;
+    margin-left: 40px;
+}
+
+.price{
+    width: 15%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.quantity{
+    width: 30%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+}
+
+.total{
+    width: 10%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+}
+
+.product {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgrey;
+}
+
+.products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products img{
+    width: 75px;
+}
+
+.basketTotalContainer{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.basketTotalTitle{
+    width: 30%;
+}
+
+.basketTotal{
+    width: 10%;
+}
+
+
